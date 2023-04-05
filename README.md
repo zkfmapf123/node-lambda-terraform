@@ -1,5 +1,9 @@
 # Node + Lambda + Terraform Template
 
+## Images
+
+![arhc](./public/arch.jpg)
+
 ## Process
 
 ```
