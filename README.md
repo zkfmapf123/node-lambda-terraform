@@ -1,6 +1,20 @@
 # Node + Lambda + Terraform Template
 
-## Images
+## Desc
+
+![deploy](./public/flow.png)
+
+- [x] Terraform
+- [x] Lambda
+- [ ] API Gateway
+- [ ] Aurora Serverless Database
+
+- [ ] Github Action
+- [ ] AWS CodePipeline
+- [ ] AWS CloudFormation
+- [ ] AWS CodeBuild
+
+## Deploy Process
 
 ![arhc](./public/arch.jpg)
 
