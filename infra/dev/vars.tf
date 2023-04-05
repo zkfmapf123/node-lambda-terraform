@@ -12,6 +12,7 @@ variable "ENV" {
     default = "dev"
 }
 
+# plan & apply 시 console에 입력
 variable "FUNC_NAME" {
     
 }
