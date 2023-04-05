@@ -8,6 +8,10 @@
 
 ```
     npm run zip-test
+
+    cd infra/dev or infra.prod
+    make plan
+    make apply
 ```
 
 ## Folder
@@ -23,3 +27,7 @@
 > infra
 
     - Terraform File 입니다
+
+## Reference
+
+- https://registry.terraform.io/providers/hashicorp/aws/latest/docs/resources/lambda_function
