@@ -1,18 +1,24 @@
 # Node + Lambda + Terraform Template
 
-## Desc
+## Todo
 
-![deploy](./public/flow.png)
+- [ ] 만약? Lambda 함수가 100개가 각각 관리되야 한다면?
+- [ ] Terraform State 관리
+
+## Desc
 
 - [x] Terraform
 - [x] Lambda
-- [ ] API Gateway
-- [ ] Aurora Serverless Database
+- [ ] Cloud-watch
+- [ ] Kinesis
+- [ ] SNS
+- [ ] SQS
+- [ ] Aurora-Serverless
+- [ ] API-Gateway
 
-- [ ] Github Action
-- [ ] AWS CodePipeline
+<!-- - [ ] AWS CodePipeline
 - [ ] AWS CloudFormation
-- [ ] AWS CodeBuild
+- [ ] AWS CodeBuild -->
 
 ## Deploy Process
 
