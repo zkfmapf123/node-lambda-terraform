@@ -14,5 +14,9 @@ variable "ENV" {
 
 # plan & apply 시 console에 입력
 variable "FUNC_NAME" {
-    
+       
+}
+
+variable "FUNC_DESC" {
+
 }

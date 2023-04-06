@@ -1,5 +1,8 @@
-plan:
+t-plan:
 	terraform init && terraform plan
 
-apply:
+t-apply:
 	terraform init && terraform apply
+
+t-destroy:
+	terraform destroy

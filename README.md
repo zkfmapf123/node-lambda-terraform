@@ -1,32 +1,50 @@
 # Node + Lambda + Terraform Template
 
-## Desc
+## Problem
 
-![deploy](./public/flow.png)
+- [x] 각각의 함수마다 State가 관리가 되어야 함 -> terraform workspace로 관리
 
-- [x] Terraform
-- [x] Lambda
-- [ ] API Gateway
-- [ ] Aurora Serverless Database
-
-- [ ] Github Action
-- [ ] AWS CodePipeline
-- [ ] AWS CloudFormation
-- [ ] AWS CodeBuild
-
-## Deploy Process
+## 사용방법
 
 ![arhc](./public/arch.jpg)
 
-## Process
+```
+    // 0. setting alias
+    source alias.sh
+
+    // 1. build
+    tsc -p src/hello/tsconfig.json && tsc-alias
+    npm run zip
+
+    // 2. setting infra
+    cd infra/dev or cd infra/prod
+    terraform workspace new hello or terraform workspace select hello
+    terraform workspace show
+
+    // 3. apply infra
+    terraform init
+    terraform plan
+    terraform apply
+
+    // 4. destroy
+    terraform destroy
 
 ```
-    npm run zip-test
 
-    cd infra/dev or infra.prod
-    make plan
-    make apply
-```
+## Desc
+
+- [x] Terraform
+- [x] Lambda
+- [x] Cloud-watch
+- [ ] API-Gateway
+- [ ] Kinesis
+- [ ] SNS
+- [ ] SQS
+- [ ] Aurora-Serverless
+
+<!-- - [ ] AWS CodePipeline
+- [ ] AWS CloudFormation
+- [ ] AWS CodeBuild -->
 
 ## Folder
 
