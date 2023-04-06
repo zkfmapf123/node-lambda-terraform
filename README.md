@@ -1,9 +1,28 @@
 # Node + Lambda + Terraform Template
 
-## Todo
+## 사용방법
 
-- [ ] 만약? Lambda 함수가 100개가 각각 관리되야 한다면?
-- [ ] Terraform State 관리
+![arhc](./public/arch.jpg)
+
+```
+    // 1. build
+    tsc -p src/hello/tsconfig.json && tsc-alias
+    npm run zip
+
+    // 2. setting infra
+    cd infra/dev or cd infra/prod
+    terraform workspace new hello or terraform workspace select hello
+    terraform workspace show
+
+    // 3. apply infra
+    terraform init
+    terraform plan
+    terraform apply
+
+    // 4. destroy
+    terraform destroy
+
+```
 
 ## Desc
 
@@ -19,20 +38,6 @@
 <!-- - [ ] AWS CodePipeline
 - [ ] AWS CloudFormation
 - [ ] AWS CodeBuild -->
-
-## Deploy Process
-
-![arhc](./public/arch.jpg)
-
-## Process
-
-```
-    npm run zip-test
-
-    cd infra/dev or infra.prod
-    make plan
-    make apply
-```
 
 ## Folder
 
