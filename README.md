@@ -36,11 +36,6 @@
 - [x] Terraform
 - [x] Lambda
 - [x] Cloud-watch
-- [ ] API-Gateway
-- [ ] Kinesis
-- [ ] SNS
-- [ ] SQS
-- [ ] Aurora-Serverless
 
 <!-- - [ ] AWS CodePipeline
 - [ ] AWS CloudFormation

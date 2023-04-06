@@ -1,10 +1,10 @@
 # use Iam Module
 module "iam_role" {
     source = "../modules/iam"
+
+    ## Variables
     func_name = var.FUNC_NAME
     aws_region = var.AWS_REGION
-
-    # must be write varibles in module file
 }
 
 resource "aws_lambda_function" "lambda_hello_tf" {
@@ -20,6 +20,7 @@ resource "aws_lambda_function" "lambda_hello_tf" {
     source_code_hash = "${filebase64sha256("../../lambda.zip")}"
 }
 
+# Output
 output "lambda_func" {
     description = "value of lambda_func"
     value = try(var.FUNC_NAME, "")
@@ -28,4 +29,9 @@ output "lambda_func" {
 output "lambda_func_desc" {
     description = "value of lambda_func_desc"
     value = try(var.FUNC_DESC, "")
+}
+
+output "lambda_function_details" {
+    description = "value of lambda_function_details"
+    value = aws_lambda_function.lambda_hello_tf
 }
