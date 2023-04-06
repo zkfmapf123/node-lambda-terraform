@@ -18,5 +18,5 @@ variable "FUNC_NAME" {
 }
 
 variable "FUNC_DESC" {
-    
+
 }

@@ -1,10 +1,17 @@
 # Node + Lambda + Terraform Template
 
+## Problem
+
+- [x] 각각의 함수마다 State가 관리가 되어야 함 -> terraform workspace로 관리
+
 ## 사용방법
 
 ![arhc](./public/arch.jpg)
 
 ```
+    // 0. setting alias
+    source alias.sh
+
     // 1. build
     tsc -p src/hello/tsconfig.json && tsc-alias
     npm run zip
@@ -28,12 +35,12 @@
 
 - [x] Terraform
 - [x] Lambda
-- [ ] Cloud-watch
+- [x] Cloud-watch
+- [ ] API-Gateway
 - [ ] Kinesis
 - [ ] SNS
 - [ ] SQS
 - [ ] Aurora-Serverless
-- [ ] API-Gateway
 
 <!-- - [ ] AWS CodePipeline
 - [ ] AWS CloudFormation
