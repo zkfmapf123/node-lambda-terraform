@@ -6,15 +6,14 @@
 
 ## 사용방법
 
-![arhc](./public/arch.jpg)
+![arhc](./public/arch.png)
 
 ```
     // 0. setting alias
     source alias.sh
 
     // 1. build
-    tsc -p src/hello/tsconfig.json && tsc-alias
-    npm run zip
+    tsc -p src/hello/tsconfig.json && tsc-alias && npm run function-zip && npm run layer-zip && npm run stat-zip
 
     // 2. setting infra
     cd infra/dev or cd infra/prod

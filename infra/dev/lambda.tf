@@ -7,7 +7,8 @@ module "iam_role" {
     aws_region = var.AWS_REGION
 }
 
-resource "aws_lambda_function" "lambda_hello_tf" {
+# Lambda Function
+resource "aws_lambda_function" "lambda_tf" {
     filename = "../../lambda.zip"
     function_name = var.FUNC_NAME
     description = var.FUNC_DESC
@@ -33,5 +34,5 @@ output "lambda_func_desc" {
 
 output "lambda_function_details" {
     description = "value of lambda_function_details"
-    value = aws_lambda_function.lambda_hello_tf
+    value = aws_lambda_function.lambda_tf
 }

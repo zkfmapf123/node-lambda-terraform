@@ -1,0 +1,23 @@
+{
+  "name": "hello",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/aws-lambda": "^8.10.114",
+    "@types/lodash": "^4.14.192",
+    "@types/node": "^18.15.11",
+    "ts-node": "^10.9.1",
+    "tsc-alias": "^1.8.5"
+  },
+  "dependencies": {
+    "aws-lambda": "^1.0.7",
+    "lodash": "^4.17.21"
+  },
+  "description": ""
+}
