@@ -1,44 +1,35 @@
 # Node + Lambda + Terraform Template
 
-## Problem
-
-- [x] 각각의 함수마다 State가 관리가 되어야 함 -> terraform workspace로 관리
-
 ## 사용방법
 
 ![arhc](./public/arch.png)
 
 ```
-    // 0. setting alias
+    // 얼라이어스 적용
     source alias.sh
 
-    // 1. build
-    tsc -p src/hello/tsconfig.json && tsc-alias && npm run function-zip && npm run layer-zip && npm run stat-zip
+    // js로 빌드
+    npm run cli:start
 
     // 2. setting infra
     cd infra/dev or cd infra/prod
-    terraform workspace new hello or terraform workspace select hello
-    terraform workspace show
+    tf workspace new hello or tf workspace select hello
+    tf workspace show
 
     // 3. apply infra
-    terraform init
-    terraform plan
-    terraform apply
+    tf init
+    tf plan
+    tf apply
 
     // 4. destroy
-    terraform destroy
+    tf destroy
 
 ```
 
 ## Desc
 
-- [x] Terraform
-- [x] Lambda
-- [x] Cloud-watch
-
-<!-- - [ ] AWS CodePipeline
-- [ ] AWS CloudFormation
-- [ ] AWS CodeBuild -->
+- 함수의 종속성 (node_modules)는 layer에 적용됩니다.
+- rollup이나 webpack으로 Bundling 하여 업로드하는 방식은 추후 진행하도록 하겠습니다.
 
 ## Folder
 
