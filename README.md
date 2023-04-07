@@ -1,5 +1,7 @@
 # Node + Lambda + Terraform Template
 
+- lambda + terraform을 사용해서 빌드하는 BoilerPlate 입니다.
+
 ## 사용방법
 
 ![arhc](./public/arch.png)
