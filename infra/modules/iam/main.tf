@@ -31,16 +31,40 @@ variable "ASSUME_ROLE_POLICY" {
     EOF
 }
 
+
 # Lambda IAM Role
 resource "aws_iam_role" "iam_lambda" {
     name = "${var.func_name}-${var.aws_region}"
     assume_role_policy = var.ASSUME_ROLE_POLICY
 }
 
+## Lambda Layer Policy
+resource "aws_iam_policy" "lambda_layer_publish_policy" {
+  name        = "lambda-layer-publish-policy"
+  policy      = jsonencode({
+    Version = "2012-10-17"
+    Statement = [
+      {
+        Effect = "Allow"
+        Action = [
+          "lambda:PublishLayerVersion"
+        ]
+        Resource = "*"
+      }
+    ]
+  })
+}
+
 ## Cloud Watch Attachment
 resource "aws_iam_role_policy_attachment" "cloudwatch_logs" {
     role = aws_iam_role.iam_lambda.name
     policy_arn = "arn:aws:iam::aws:policy/service-role/AWSLambdaBasicExecutionRole"
+}
+
+## Lambda Layer Attachment
+resource "aws_iam_role_policy_attachment" "lambda_layer_publish_attachment" {
+    policy_arn = aws_iam_policy.lambda_layer_publish_policy.arn
+    role       = aws_iam_role.iam_lambda.name
 }
 
 ## VPC Attachment

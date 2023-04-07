@@ -15,11 +15,12 @@ import { promisify } from 'util'
 
   for (const cmd of new Array(
     'npm run clean',
+    `cd src/${option} && npm install`,
     `tsc -p ./src/${option}/tsconfig.json && tsc-alias`,
     `cp src/${option}/package.json lib/${option}`,
     `cp src/${option}/package-lock.json lib/${option}`,
     'npm run function-zip',
-    'npm run stat-zip'
+    `cd src/${option} && rm -rf nodejs && mkdir nodejs && mv node_modules nodejs && zip -r layer.zip nodejs && mv layer.zip ../../`
   )) {
     try {
       await execAsync(cmd)

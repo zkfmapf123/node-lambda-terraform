@@ -6,7 +6,6 @@
   "scripts": {
     "clean": "rm -rf node_modules && rm -rf lib && rm -rf *.zip",
     "function-zip": "zip -r lambda.zip . -x 'tsconfig.json' -x 'src/*' -x 'infra/*' -x 'node_modules/*' -x '.git' ! -x '.git/*' -x 'public/*' -x 'alias.sh' -x 'cli.mjs' -x '*.md' -x './package.json' -x './package-lock.json'",
-    "stat-zip": "ls -lh lambda.zip",
     "test": "echo \"Error: no test specified\" && exit 1",
     "cli:start": "npm i && node cli.mjs"
   },
